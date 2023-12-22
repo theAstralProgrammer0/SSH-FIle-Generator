@@ -1,6 +1,6 @@
 # Some of my **astral** scripts
 
-## run_install.sh
+## 0. run_install.sh
    * This script checks if a command exists in the Linux filesystem.
    * If it exists, it runs the command
    * Else it installs the command's executable, and runs it
