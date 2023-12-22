@@ -11,5 +11,5 @@
    chmod +x run_install.sh
    ```
    ```bash
-   ./run_install.sh [command] [...]
+   ./run_install.sh [command] [arguments ...]
    ```
