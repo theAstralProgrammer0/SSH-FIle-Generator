@@ -8,5 +8,7 @@
 ### Usage:
    ```bash
    chmod +x run_install.sh
+   ```
+   ```bash
    ./run_install.sh [command] [argument]
    ```
