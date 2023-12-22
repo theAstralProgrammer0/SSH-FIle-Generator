@@ -1,7 +1,6 @@
 #!/bin/bash
 
-command=$1
-arg=$2
+command=$@
 
 # check if command exists
 if command -v $command
@@ -16,15 +15,17 @@ else
     echo
     echo "Intalling it ..."
     echo
-    sudo apt update && sudo apt install -y $command
+    sudo apt update && sudo apt install -y $command >> run_install_result.log
+    # check if install was not successful 
     if [ $? -ne 0 ]
     then
         echo
-        echo "Hmm...some error occured"
+        echo "Some error occured. Installation unsuccessful" >> run_install_failure.log
 	echo
-	echo "Confirm no typo in $command and try again"
+	echo "Confirm no typo in $command and try again" >> run_install_diag.log
 	echo
+	# exit on failure
 	exit 1
     fi
 fi
-$command $arg
+$command
