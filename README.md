@@ -4,7 +4,7 @@
    * This script checks if a command exists in the Linux filesystem.
    * If it exists, it runs the command
    * Else it installs the command's executable, and runs it with arguments
-   * This script also stores result, failure, and diagnoses logs in separate files
+   * This script also stores results, failures, and diagnoses logs in associated files
 
 ### Usage:
    ```bash
