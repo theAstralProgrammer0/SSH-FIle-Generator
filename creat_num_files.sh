@@ -44,6 +44,7 @@ then
     fi
 else
     echo "$dir DIRECTORY NOT FOUND"
+    echo "Usage: $0 dir_path"
     echo "Exiting ..."
     exit 1
 fi
