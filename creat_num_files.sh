@@ -1,50 +1,39 @@
 #!/bin/bash
 
-# enter the dir
-# loop over each filename in the dir
-# if the filename matches "id_rsa", number_files id_rsa
-# else skip filename
-# print the new filename generated
-# 
+dir=$1
+filename=$2
+file_regex=$filename[0-9]*$
 
-# if dir is found
-# list the files in the dir in 1 column
-# grep all file_regex matches
-# if value of grepped files is null (no file matches regex), then create a new
-# id_rsa file
-# else find the tail -1 of result and assign to file
-# give number_file the file to increment
-
-dir=$@
-file_regex=id_rsa[0-9]*
-
-if [ -d "$dir" ]
+if [ -d $dir ]
 then
+    echo
     echo "$dir DIRECTORY FOUND"
-    latest=$(ls -1 "$dir"|grep $file_regex|tail -1)
-    # check if no id_rsa exists
+    
+    latest=$(ls -v "$dir"|grep "$file_regex"|tail -1)
+    # check if no filename file exists
     if [ -z "$latest" ]
     then
-        echo "No 'id_rsa' file found."
+        echo "No $filename file found."
         echo "CREATING ONE ..."
-        touch "$dir"/id_rsa
+        touch "$dir"/$filename
 	if [ $? -eq 0 ]
         then
-	    echo "id_rsa file created successfully!"
+	    echo "$filename file created successfully!"
 	else
-	    echo "An error occured trying to create id_rsa file"
+	    echo "An error occured trying to create $filename file"
 	fi
     else
-        # id_rsa file exist, create next one
-        echo "id_rsa file type found"
+        # filename file exist, create next one
+	echo
+        echo "$filename file type found"
+	echo "Latest is $latest"
 	echo "CREATING NEXT ..."
+	echo
 	./number_files.sh "${dir}/${latest}"
-#touch "$dir/$latest"
-#	echo "Next id_rsa file created successfully!"
     fi
 else
     echo "$dir DIRECTORY NOT FOUND"
-    echo "Usage: $0 dir_path"
+    echo "Usage: $0 dir_path filename"
     echo "Exiting ..."
     exit 1
 fi
