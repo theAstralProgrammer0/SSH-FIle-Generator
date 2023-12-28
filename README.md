@@ -26,6 +26,7 @@ Usage: ./gen_ssh [credential] [file_name] [/path/to/dir]
 
 * If the script encounters any other errors, an appropriate error message is
 displayed on the screen, the script exits and the error code causing the error is set.
+
 To see the error code of the latest error:
 ```bash
 echo $?
