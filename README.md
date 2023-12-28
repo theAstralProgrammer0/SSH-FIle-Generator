@@ -19,10 +19,17 @@ This command generates an SSH key pair for the email credential
 If the destination directory already contains a file with the specified name, the script appends a numerical suffix to create a unique filename (e.g.,`filename1`, `filename2`, ...)
 
 ### Error Handling:
-If the script is run without providing all three required parameters, it will display an error message:
+* If the script is run without providing all three required parameters, it will display an error message:
 ```bash
 Usage: ./gen_ssh [credential] [file_name] [/path/to/dir]
 ```
+
+* If the script encounters any other errors, an appropriate error message is displayed on the screen, the script exits and the error code causing the error is set.
+```bash
+echo $?
+```
+
+To see the error code of the latest error
 
 ## SSH Agent
 The script sets up the SSH agent's environment variables to store the decrypted private key, ensuring persistent SSH connections. The private key is saved in the specified text file and must be kept private. Only the corresponding public key should be used for secure connections.
