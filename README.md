@@ -40,7 +40,7 @@ The script sets up the SSH agent's environment variables to store the decrypted 
 In situations where the script is run from within a subshell or a different
 environment, the `SSH_AUTH_SOCK` variable should be exported manually to point to the correct agent socket:
 ```bash
-export SSH_AUTH_SOCK=$(find /tmp/ssh-*/ $HOME/.ssh/* -type s -name agent.* 2>/dev/null | head -n 1)
+export SSH_AUTH_SOCK=$(find /tmp/ssh-*/ ~/.ssh/* -type s -name agent.* 2>/dev/null | head -n 1)
 ```
 
 This ensures that the SSH agent's environment variables are correctly set for persistent connections.
