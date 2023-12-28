@@ -24,12 +24,13 @@ If the destination directory already contains a file with the specified name, th
 Usage: ./gen_ssh [credential] [file_name] [/path/to/dir]
 ```
 
-* If the script encounters any other errors, an appropriate error message is displayed on the screen, the script exits and the error code causing the error is set.
+* If the script encounters any other errors, an appropriate error message is
+displayed on the screen, the script exits and the error code causing the error is set.
+To see the error code of the latest error:
 ```bash
 echo $?
 ```
 
-To see the error code of the latest error
 
 ## SSH Agent
 The script sets up the SSH agent's environment variables to store the decrypted private key, ensuring persistent SSH connections. The private key is saved in the specified text file and must be kept private. Only the corresponding public key should be used for secure connections.
