@@ -8,7 +8,7 @@ if [ -d $dir ]
 then
     echo
     echo "$dir DIRECTORY FOUND"
-    
+
     latest=$(ls -v "$dir"|grep "$file_regex"|tail -1)
     # check if no filename file exists
     if [ -z "$latest" ]
@@ -41,12 +41,12 @@ exit 0
 
 
 #for file in "$dir"/*; do
-#       
+#
 #       filename=$(basename "$file")
-#       
+#
 #	if [[ "$filename" =~ $file_regex ]]
 #	then
-#	    
+#
 #	    echo "id_rsa file type found"
 #	    ./number_files.sh "$file"
 #	    exit 0
