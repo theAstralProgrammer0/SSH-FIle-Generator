@@ -3,7 +3,7 @@
 filename=$@
 
 # strip the filenames of their base parts
-base_part="${filename%%[0-9]*}" # %% means remove from the end 
+base_part="${filename%%[0-9]*}" # %% means remove from the end
 
 # strip the filenames of their num parts
 num_part="${filename##*[!0-9]}" # ## means remove from the beginning
