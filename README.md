@@ -35,7 +35,7 @@ stores them in the `~/.ssh` directory.
 ./gen_ssh example3@email.com foo 
 ```
 
-For this command, since the `directory` field is empty, the SSH key pair is
+For this command, since the directory field is empty, the SSH key pair is
 generated. The `private` key will be written into the file `foo`, while the
 `public` key in `foo.pub` and stored in the `~/.ssh` directory by default. 
 
@@ -44,7 +44,7 @@ generated. The `private` key will be written into the file `foo`, while the
 ./gen_ssh example4@email.com
 ```
 
-Here, both the `directory` and `filename` fields are empty, hence, `~/.ssh` is
+Here, both the directory and file name fields are empty, hence, `~/.ssh` is
 the default directory, and `id_rsa` is the default file name.
 
 #### Error Handling:
