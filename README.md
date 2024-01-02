@@ -10,28 +10,42 @@ This simple script, `gen_ssh`, automates the process of generating SSH key pairs
 
 ### Example:
 ```bash
-./gen_ssh example1@email.com filename ~/.ssh
+./gen_ssh example1@email.com foo bar
 ```
 
 This command generates an SSH key pair for the email credential
-`example1@email.com`, saves it in the text file filename located in the `~/.ssh` directory, and prints the content of filename.pub (the public key) to the screen.
+`example1@email.com`, saves the `private` key in the text file `foo` and
+the `public` key in `foo.pub`, both located in the `bar` directory.
+Finally, it prints the content of `foo.pub` (the public key) to the screen.
 
-If the destination directory already contains a file with the specified name, the script appends a numerical suffix to create a unique filename (e.g.,`filename1`, `filename2`, ...)
-
-### Example:
-```bash
-./gen_ssh exampe2@email.com filename
-```
-
-Since the `directory` field is empty, `~/.ssh` is used by default
+If the destination directory already contains a file with the specified file
+name, the script appends a numerical suffix to create a unique file name
+(e.g.,`foo1`, `foo2`, ...)
 
 ### Example:
 ```bash
-./gen_ssh example3@email.com
+./gen_ssh example2@email.com foo ~/.ssh
 ```
 
-Here, both the `directory` and `filename` fields are empty, `~/.ssh` and
-`id_rsa` are used by default
+This command generates `private` and `public` keys - `foo` and `foo.pub` - and
+stores them in the `~/.ssh` directory. 
+
+### Example:
+```bash
+./gen_ssh example3@email.com foo 
+```
+
+For this command, since the `directory` field is empty, the SSH key pair is
+generated. The `private` key will be written into the file `foo`, while the
+`public` key in `foo.pub` and stored in the `~/.ssh` directory by default. 
+
+### Example:
+```bash
+./gen_ssh example4@email.com
+```
+
+Here, both the `directory` and `filename` fields are empty, hence, `~/.ssh` is
+the default directory, and `id_rsa` is the default file name.
 
 ### Error Handling:
 * If the script is run without providing any parameters, it will display an error message:
