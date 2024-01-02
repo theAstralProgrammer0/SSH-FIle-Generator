@@ -45,7 +45,8 @@ generated. The `private` key will be written into the file `foo`, while the
 ```
 
 Here, both the directory and file name fields are empty, hence, `~/.ssh` is
-the default directory, and `id_rsa` is the default file name.
+the default directory, while `id_rsa` and `id_rsa.pub` are the default file
+names for the `private` and `public` keys respectively.
 
 #### Error Handling:
 * If the script is run without providing any parameters, it will display an error message:
