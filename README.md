@@ -18,8 +18,23 @@ This command generates an SSH key pair for the email credential
 
 If the destination directory already contains a file with the specified name, the script appends a numerical suffix to create a unique filename (e.g.,`filename1`, `filename2`, ...)
 
+### Example:
+```bash
+./gen_ssh exampe2@email.com filename
+```
+
+Since the `directory` field is empty, `~/.ssh` is used by default
+
+### Example:
+```bash
+./gen_ssh example3@email.com
+```
+
+Here, both the `directory` and `filename` fields are empty, `~/.ssh` and
+`id_rsa` are used by default
+
 ### Error Handling:
-* If the script is run without providing all three required parameters, it will display an error message:
+* If the script is run without providing any parameters, it will display an error message:
 ```bash
 Usage: ./gen_ssh [credential] [file_name] [/path/to/dir]
 ```
@@ -43,7 +58,9 @@ environment, the `SSH_AUTH_SOCK` variable should be exported manually to point t
 export SSH_AUTH_SOCK=$(find /tmp/ssh-*/ ~/.ssh/* -type s -name agent.* 2>/dev/null | head -n 1)
 ```
 
-This ensures that the SSH agent's environment variables are correctly set for persistent connections.
+This ensures that the SSH agent's environment variables are correctly set for
+persistent connections when the script is run from within a subshell or a
+different environment altogether.
 
 ## Note
 * Always keep your private keys secure and never share them.
