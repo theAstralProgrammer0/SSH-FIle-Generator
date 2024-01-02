@@ -37,7 +37,8 @@ stores them in the `~/.ssh` directory.
 
 For this command, since the directory field is empty, the SSH key pair is
 generated. The `private` key will be written into the file `foo`, while the
-`public` key in `foo.pub` and stored in the `~/.ssh` directory by default. 
+`public` key is written in `foo.pub` and both files are stored in the `~/.ssh` 
+directory by default. 
 
 #### Example:
 ```bash
