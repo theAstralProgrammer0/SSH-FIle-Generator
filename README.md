@@ -8,7 +8,7 @@ This simple script, `gen_ssh`, automates the process of generating SSH key pairs
 ./gen_ssh [credential] [file_name] [/path/to/dir]
 ```
 
-### Example:
+#### Example:
 ```bash
 ./gen_ssh example1@email.com foo bar
 ```
@@ -22,7 +22,7 @@ If the destination directory already contains a file with the specified file
 name, the script appends a numerical suffix to create a unique file name
 (e.g.,`foo1`, `foo2`, ...)
 
-### Example:
+#### Example:
 ```bash
 ./gen_ssh example2@email.com foo ~/.ssh
 ```
@@ -30,7 +30,7 @@ name, the script appends a numerical suffix to create a unique file name
 This command generates `private` and `public` keys - `foo` and `foo.pub` - and
 stores them in the `~/.ssh` directory. 
 
-### Example:
+#### Example:
 ```bash
 ./gen_ssh example3@email.com foo 
 ```
@@ -39,7 +39,7 @@ For this command, since the `directory` field is empty, the SSH key pair is
 generated. The `private` key will be written into the file `foo`, while the
 `public` key in `foo.pub` and stored in the `~/.ssh` directory by default. 
 
-### Example:
+#### Example:
 ```bash
 ./gen_ssh example4@email.com
 ```
@@ -47,7 +47,7 @@ generated. The `private` key will be written into the file `foo`, while the
 Here, both the `directory` and `filename` fields are empty, hence, `~/.ssh` is
 the default directory, and `id_rsa` is the default file name.
 
-### Error Handling:
+#### Error Handling:
 * If the script is run without providing any parameters, it will display an error message:
 ```bash
 Usage: ./gen_ssh [credential] [file_name] [/path/to/dir]
